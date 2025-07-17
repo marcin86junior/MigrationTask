@@ -1,7 +1,8 @@
 # Django – Migracja Subskrybentów do User'a
 
-Projekt zawiera komendy Django służące do migracji danych między modelami:
-`Subscriber`, `SubscriberSMS`, `Client` i `User`.
+Projekt zawiera komendy Django do migracji danych:
+- python manage.py migrate_subscribers
+- python manage.py update_gdpr_consent
 
 ## 📦 Wymagania
 
