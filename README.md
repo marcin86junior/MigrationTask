@@ -1,4 +1,4 @@
-# Django – Migracja Subskrybentów do Użytkowników
+# Django – Migracja Subskrybentów do User'a
 
 Projekt zawiera komendy Django służące do migracji danych między modelami:
 `Subscriber`, `SubscriberSMS`, `Client` i `User`.
@@ -7,7 +7,6 @@ Projekt zawiera komendy Django służące do migracji danych między modelami:
 
 - Python 3.10
 - Django 5.2
-- Virtualenv (rekomendowane)
 
 ## Instalacja
 
