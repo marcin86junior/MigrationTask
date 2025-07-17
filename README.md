@@ -11,7 +11,7 @@ Projekt zawiera komendy Django służące do migracji danych między modelami:
 
 ## Instalacja
 
-- git clone <repo_url>
+- git clone https://github.com/marcin86junior/MigrationTask.git .
 - cd Zadanie_1
 - python -m venv venv
 - venv\Scripts\activate
