@@ -38,11 +38,9 @@ Projekt zawiera komendy Django służące do migracji danych między modelami:
 ## 🔍 Weryfikacja update_gdpr_consent:
 
 - python manage.py update_gdpr_consent
-
-
-    Rozpoczynam aktualizację gdpr_consent...
-    Zaktualizowano User existing_user@example.com: gdpr_consent False -> True
-    Zaktualizowano User sms_exists@example.com: gdpr_consent False -> True
-    Zaktualizowano User conflicted@example.com: gdpr_consent False -> True
-    Aktualizacja zakończona. Zaktualizowano 3 użytkowników.
+- Rozpoczynam aktualizację gdpr_consent...
+- Zaktualizowano User existing_user@example.com: gdpr_consent False -> True
+- Zaktualizowano User sms_exists@example.com: gdpr_consent False -> True
+- Zaktualizowano User conflicted@example.com: gdpr_consent False -> True
+- Aktualizacja zakończona. Zaktualizowano 3 użytkowników.
 
