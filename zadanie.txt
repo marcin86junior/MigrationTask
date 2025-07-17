@@ -1,0 +1,69 @@
+DANE DO ZADAŃ:
+Dostępne są modele:
+
+Subscriber
+id: int
+create_date: datetime
+email: str, unique
+gdpr_consent: boolean
+
+SubscriberSMS
+id: int
+create_date: datetime
+phone: str, unique
+gdpr_consent: boolean
+
+Client
+id: int
+create_date: datetime
+email: str, unique
+phone: str, nie unique
+
+User
+id: int
+create_date: datetime
+email: str
+phone: str
+gdpr_consent: boolean
+
+Pola phone i email są znormalizowane, więc są porównywalne z wartościami z innych rekordów.
+Skrypty utworzone w ramach poniższych zadań powinny być zgodne z Django i wykonane w formie
+migracji lub poleceń wykonywanych przy pomocy manage.py.
+
+Oceniane będą:
+• czytelność kodu
+• optymalizacja pod kątem liczby zapytań do bazy danych
+
+Zadanie 1.
+Przygotuj skrypt migrujący rekordy z modeli Subscriber i SubscriberSMS do User przy założeniach:
+
+• dla modelu Subscriber
+
+o jeśli istnieje User z polem email takim samym jak w Subscriber - pomiń subskrybenta
+i nie twórz nowego użytkownika
+o jeśli nie istnieje ww. User
+▪ jeśli istnieje Client z polem email takim jak Subscriber.email i nie istnieje
+User z polem phone takim jak Client.phone i polem email różnym od
+Client.email stwórz użytkownika na podstawie modelu Client
+▪ jeśli istnieje Client z polem email takim jak Subscriber.email i istnieje User z
+polem phone takim jak Client.phone i polem email różnym od Client.email
+zapisz id i email subskrybenta do pliku subscriber_conflicts.csv
+▪ jeśli nie istnieje Client z polem email takim jak Subscriber.email, stwórz
+użytkownika z pustym polem phone
+
+• dla modelu SubscriberSMS
+
+o kroki analogiczne do Subscriber, tylko z odwróconą logiką pól email i phone, i
+osobnym plikiem csv na konflikty
+
+Nie twórz użytkowników na podstawie klientów z nieunikalnymi numerami telefonów - informację o
+takich klientach również zapisz do pliku .csv.
+Zadbaj o przeniesienie pola gdpr_consent do nowych użytkowników.
+
+Zadanie 2
+Przygotuj skrypt migrujący, który dla użytkowników, którzy mają swoich odpowiedników w
+subskrybentach (subskrybenci pominięci w zadaniu 1) przenosi wartość pola Subscriber.gdpr_consent
+na odpowiednik w modelu User, ale tylko, jeśli data utworzenia subskrybenta jest nowsza niż data
+utworzenia użytkownika. Jeśli użytkownik powstał z połączenia Subscriber i SubscriberSMS (istniał
+Client o danym telefonie i adresie email) o wartości gdpr_consent decyduje obiekt o najnowszej
+dacie utworzenia.

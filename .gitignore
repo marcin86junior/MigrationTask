@@ -1,0 +1,24 @@
+# === Django ===
+*.pyc
+*~
+__pycache__/
+venv/
+.venv/
+db.sqlite3
+
+# Django static files
+/static/
+
+# === OS/IDE system files ===
+Thumbs.db
+
+# Pycharm files
+.idea/
+idea/
+
+# VSCode files
+.vscode/
+vscode/
+
+# .env files
+.env

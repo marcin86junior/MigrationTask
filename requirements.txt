@@ -1,0 +1,16 @@
+# Typing
+
+# Django
+django==5.2
+
+# Two-factor authentication
+
+# Django REST
+
+# Celery
+
+# OpenAI
+
+# Miscellaneous
+
+# DB
